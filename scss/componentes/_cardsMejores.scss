@@ -17,12 +17,14 @@
   }
 
   &__img { 
-    // Imagen ajustada al contenedor con animación en hover 
-    object-fit: cover; 
+    // Ajusta el tamaño de la imagen 
+    width: 100%; // Asegura que la imagen ocupe todo el ancho del contenedor 
+    height: 100%; // Ajusta la altura al 100% del contenedor
+    object-fit: cover; // La imagen cubre todo el contenedor, recortando los bordes si es necesario
     transition: transform $transition-time ease; 
 
     &:hover { 
-      transform: scale(1.05); 
+      transform: scale(1.05); // Mantiene el efecto al hacer hover
     }
   }
 
@@ -32,10 +34,13 @@
     text-align: center; 
 
     h4 { 
-      margin-bottom: 1rem; 
+      color: color(secondary);
+      margin-bottom: 1rem;
+      font-size: 1.5rem; 
     }
 
-    p { 
+    p {
+      font-size: 1.2rem; 
       color: darken-color(#777, 10%); 
     }
   }
