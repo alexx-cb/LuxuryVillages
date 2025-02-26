@@ -1,0 +1,18 @@
+.hero {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    height: 75vh;
+    background: url('../../img/alonoso.jpg') no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    @include center-flex;
+    
+
+    &-content {
+        color: white;
+        font-size: 2rem;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 1rem;
+        border-radius: 8px;
+    }
+}

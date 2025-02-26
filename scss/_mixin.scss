@@ -1,0 +1,70 @@
+@mixin genera_cabeceras($level, $color){
+    font-size: size($level);
+    color: $color;
+    font-family: $font-family;
+}
+
+// Mixin para centrar elementos con flex
+@mixin center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@for $i from 1 through 6{
+    h#{$i}, .h#{$i}{
+        @include genera_cabeceras(
+            nth(('xxl', 'xl', 'l', 'm', 's', 'xs'), $i),
+            color(nth(('primary', 'secondary', 'tertiary', 'quaternary', 'quinta', 'black'), $i))
+        );
+    }
+}
+
+@mixin menus(){
+    &-list{
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        justify-content: space-around;
+    }
+
+    &-item{
+        margin-right: 1rem;
+    }
+
+    &-link{
+        text-decoration: none;
+        color: inherit;
+
+        &:hover{
+            color: color(quinta);
+        }
+    }
+}
+
+@mixin card-styles {
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    img {
+        width: 100%;
+        height: 650px;
+        object-fit: cover;
+    }
+
+
+}

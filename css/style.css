@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:300,400,700");
+h1, .h1 {
+  font-size: 3rem;
+  color: #333;
+  font-family: "Nunito", "arial";
+}
+
+h2, .h2 {
+  font-size: 2.5rem;
+  color: #ffe;
+  font-family: "Nunito", "arial";
+}
+
+h3, .h3 {
+  font-size: 2rem;
+  color: #f2f0f1;
+  font-family: "Nunito", "arial";
+}
+
+h4, .h4 {
+  font-size: 1.5rem;
+  color: #e75480;
+  font-family: "Nunito", "arial";
+}
+
+h5, .h5 {
+  font-size: 1rem;
+  color: red;
+  font-family: "Nunito", "arial";
+}
+
+h6, .h6 {
+  font-size: 0.75rem;
+  font-family: "Nunito", "arial";
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", "arial";
+}
+
+html {
+  font-size: 100%;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: minmax(6rem, 1fr), repeat(8, minmax(min-content, 16rem)) minmax(6rem, 1fr);
+  grid-template-rows: repeat(5, min-content);
+  grid-row-gap: 0.75rem;
+  background-color: #f2f0f1;
+}
+
+.header {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  display: grid;
+  grid-template-columns: minmax(10rem, 1fr) repeat(7, minmax(min-content, 16rem)) minmax(10rem, 1fr);
+  grid-template-rows: repeat(3, min-content);
+  grid-gap: 0.75rem;
+  z-index: 100;
+}
+
+.logo {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  padding: 1rem;
+}
+.logo-img {
+  width: 10rem;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heading {
+  grid-column: 3/8;
+  grid-row: 1/2;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+.heading-text {
+  font-family: "Nunito", "arial";
+  letter-spacing: 0.25rem;
+  color: #e75480;
+}
+
+.nav {
+  grid-column: 8/10;
+  grid-row: 1/2;
+  margin-right: 3rem;
+  justify-self: end;
+  align-self: center;
+}
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: space-around;
+}
+.nav-item {
+  margin-right: 1rem;
+}
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+}
+.nav-link:hover {
+  color: red;
+}
+
+.hero {
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  height: 75vh;
+  background: url("../../img/alonoso.jpg") no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-content {
+  color: white;
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.categorias {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+.categorias-titulo {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.categorias .categorias-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  justify-items: center;
+  width: 100%;
+}
+@media (max-width: 600px) {
+  .categorias .categorias-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.categoria {
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+  overflow: hidden;
+}
+.categoria:hover {
+  transform: scale(1.05);
+}
+.categoria img {
+  width: 100%;
+  height: 650px;
+  object-fit: cover;
+}
+.categoria img {
+  transition: opacity 0.3s ease-in-out;
+}
+.categoria .categoria-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.categoria:hover img {
+  opacity: 0.5;
+}
+.categoria:hover .categoria-text {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=style.css.map */

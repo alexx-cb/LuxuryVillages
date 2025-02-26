@@ -1,0 +1,30 @@
+// Fuentes Web
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700');
+
+// Colores
+$colors: (
+    primary: #333,
+    secondary: #ffe,
+    tertiary: #f2f0f1,
+    quaternary: #e75480,
+    quinta: red
+);
+
+@function color ($color-name){
+    @return map-get($colors, $color-name);
+}
+
+$font-family: "Nunito", "arial";
+
+$font-sizes:(
+    xxl: 3rem,
+    xl: 2.5rem,
+    l: 2rem,
+    m: 1.5rem,
+    s: 1rem,
+    xs: 0.75rem
+);
+
+@function size($size){
+    @return map-get($font-sizes, $size)
+}

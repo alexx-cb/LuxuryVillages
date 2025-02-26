@@ -1,0 +1,15 @@
+.heading {
+    grid-column: 3/8;
+    grid-row: 1/2;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+
+    &-text{
+        font-family: $font-family;
+        letter-spacing: 0.25rem;
+        color: color(quaternary);
+    }
+}

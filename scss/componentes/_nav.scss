@@ -1,0 +1,9 @@
+.nav {
+    grid-column: 8/10; 
+    grid-row: 1/2; 
+    margin-right: 3rem;
+    justify-self: end;
+    align-self: center;
+
+    @include menus;
+}
