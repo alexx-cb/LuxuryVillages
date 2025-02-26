@@ -1,9 +1,11 @@
-.nav {
-    grid-column: 8/10; 
-    grid-row: 1/2; 
-    margin-right: 3rem;
-    justify-self: end;
-    align-self: center;
+.nav { 
+    // Estilos generales y ubicación en la cuadrícula 
+    font-size: 1.25rem; 
+    grid-column: 7/10;  
+    grid-row: 1/2;  
+    margin-right: 3rem; 
+    justify-self: end; 
+    align-self: center; 
 
-    @include menus;
+    @include menus; // Aplica estilos de menú 
 }

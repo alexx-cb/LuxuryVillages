@@ -1,0 +1,9 @@
+{
+    "name": "Luxury Villages",
+    "output": "docs",
+    "theme": "default",
+    "style": {
+        "output": "css",
+        "autoprefixer": true
+    }
+}

@@ -4,12 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "docs": "sassdoc",
     "watch": "sass -w scss/style.scss css/style.css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-sass": "^6.0.0",
+    "sass": "^1.85.1",
     "sassdoc": "^1.10.12"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0"
   }
 }

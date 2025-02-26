@@ -1,14 +1,16 @@
+// Estilos generales
 *,
 *::after,
 *::before{
     margin: 0;
     padding: 0;
-    font-family: $font-family;
+    font-family: $Secundaria;
 }
 html{
     font-size: 100%;
 }
 
+// Grid para el contenedor principal
 .container {
     display: grid;
     grid-template-columns: minmax(6rem, 1fr) repeat(8, minmax(min-content, 16rem)) minmax(6rem, 1fr);

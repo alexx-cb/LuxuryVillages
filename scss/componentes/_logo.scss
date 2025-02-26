@@ -1,10 +1,13 @@
-.logo{
-    grid-column: 1/2;
-    grid-row: 1/2;
-    padding: 1rem;
-    &-img{
-        width: 8rem;
-        height: 100%;
-        object-fit: cover;
+.logo { 
+    // Posición en la cuadrícula y espaciado 
+    grid-column: 1/2; 
+    grid-row: 1/2; 
+    padding: 1rem; 
+
+    &-img { 
+        // Tamaño y ajuste de la imagen 
+        width: 8rem; 
+        height: 100%; 
+        object-fit: cover; 
     }
 }

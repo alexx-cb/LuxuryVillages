@@ -1,18 +1,32 @@
-@mixin genera_cabeceras($level, $color){
+/**
+ * Mixin para generar cabeceras.
+ *
+ * @param {Number} $level - El nivel de la cabecera (1-6).
+ * @param {Color} $color - El color del texto.
+ */
+@mixin genera_cabeceras($level, $color) {
     font-size: size($level);
     color: $color;
-    font-family: $font-family;
+    font-family: $Principal;
 }
 
-// Mixin para centrar elementos con flex
+/**
+ * Mixin para centrar elementos usando flexbox.
+ */
 @mixin center-flex {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-@for $i from 1 through 6{
-    h#{$i}, .h#{$i}{
+/**
+ * Genera estilos para encabezados desde h1 hasta h6.
+ *
+ * Utiliza el mixin `genera_cabeceras` para aplicar
+ * estilos de cabecera basados en el nivel.
+ */
+@for $i from 1 through 6 {
+    h#{$i}, .h#{$i} {
         @include genera_cabeceras(
             nth(('xxl', 'xl', 'l', 'm', 's', 'xs'), $i),
             color(nth(('primary', 'secondary', 'tertiary', 'quaternary', 'quinta', 'black'), $i))
@@ -20,8 +34,11 @@
     }
 }
 
-@mixin menus(){
-    &-list{
+/**
+ * Mixin para crear un menú con lista flexible.
+ */
+@mixin menus() {
+    &-list {
         display: flex;
         flex-direction: row;
         list-style: none;
@@ -30,20 +47,26 @@
         justify-content: space-around;
     }
 
-    &-item{
+    &-item {
         margin-right: 1rem;
     }
 
-    &-link{
+    &-link {
         text-decoration: none;
         color: inherit;
 
-        &:hover{
-            color: color(quinta);
+        &:hover {
+            color: color(secondary  );
         }
     }
 }
 
+/**
+ * Mixin para estilos de tarjeta.
+ *
+ * Incluye propiedades para el fondo, sombra,
+ * alineación y efectos de hover.
+ */
 @mixin card-styles {
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -67,24 +90,39 @@
     }
 }
 
-
+/**
+ * Mixin para centrar elementos utilizando grid.
+ */
 @mixin grid-center {
     display: grid;
     justify-content: center;
     align-items: center;
-}  
-  
+}
 
+/**
+ * Función para oscurecer un color.
+ *
+ * @param {Color} $color - El color a oscurecer.
+ * @param {Number} $amount - Cantidad de oscuridad (0-100).
+ * @return {Color} - El color oscurecido.
+ */
 @function darken-color($color, $amount) {
     @return darken($color, $amount);
 }
-  
 
+/**
+ * Mixin para efectos de hover en tarjetas.
+ */
 @mixin card-hover {
     transform: translateY(-0.5rem);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
+/**
+ * Mixin para el título de sección.
+ *
+ * Define estilos de tipografía para títulos de sección.
+ */
 @mixin section-title {
     font-size: 1.5rem;
     font-weight: bold;
@@ -92,7 +130,9 @@
     text-transform: uppercase;
 }
 
-
+/**
+ * Placeholder para un contenedor flexible en fila.
+ */
 %flex-row {
     display: flex;
     flex-direction: row;
@@ -100,6 +140,12 @@
     align-items: center;
 }
 
+/**
+ * Placeholder para la base de una tarjeta.
+ *
+ * Incluye propiedades de fondo, bordes y sombra,
+ * además de efectos de hover.
+ */
 %card-base {
     background-color: #fff;
     border-radius: $card-radius;

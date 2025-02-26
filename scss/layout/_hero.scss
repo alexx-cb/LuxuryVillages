@@ -1,19 +1,26 @@
-.hero {
-    grid-column: 1/-1;
-    grid-row: 1/2;
-    height: 90vh;
-    background: url('../../img/alonoso.jpg') no-repeat center center;
-    background-size: cover;
-    text-align: center;
-    margin-top: 6.2rem;
-    @include center-flex;
-    
+.hero { 
+    // Sección principal con imagen de fondo 
+    grid-column: 1/-1; 
+    grid-row: 1/2; 
+    height: 90vh; 
+    background: url('../../img/inicio.jpg'); 
+    background-size: cover; 
+    text-align: center; 
+    margin-top: 6.2rem; 
 
-    &-content {
-        color: white;
-        font-size: 2rem;
-        background: rgba(0, 0, 0, 0.5);
-        padding: 1rem;
-        border-radius: 8px;
+    @include center-flex; // Centra el contenido 
+
+    h5 { 
+        font-size: 3rem; // Tamaño del subtítulo 
     }
+
+    &-content { 
+        // Estilos para el contenido sobre la imagen 
+        font-family: $Principal; 
+        color: color(quinta); 
+        font-size: 2rem; 
+        background: rgba(0, 0, 0, 0.5); 
+        padding: 1rem; 
+        border-radius: 8px; 
+    } 
 }
