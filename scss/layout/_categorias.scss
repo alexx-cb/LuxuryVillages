@@ -1,24 +1,33 @@
 .categorias {
+    grid-column: 1 / 10;
+    grid-row: 2/3;
+    
     display: flex;
     flex-direction: column;
-    align-items: center; // Centra el h2
-    text-align: center; // Asegura que el texto se vea centrado
+    align-items: center;
+    text-align: center;
     gap: 1rem;
     padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
 
     &-titulo {
         font-size: 2rem;
         font-weight: bold;
         margin-bottom: 1rem;
     }
-
-    .categorias-grid {
+    
+    &-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
         justify-items: center;
         width: 100%;
-
+        max-width: 1200px;
+        padding: 0 2rem;
+        
         @media (max-width: 600px) {
             grid-template-columns: 1fr;
         }

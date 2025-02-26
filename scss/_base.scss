@@ -15,5 +15,9 @@ html{
     grid-template-rows: repeat(5, min-content);
     grid-row-gap: 0.75rem;
     background-color: color(tertiary);
+
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 

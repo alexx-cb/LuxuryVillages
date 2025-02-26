@@ -3,9 +3,14 @@
 @import './base';
 
 @import './layout/header';
+@import './layout/hero';
+@import './layout/categorias';
+@import './layout/mejores';
+
 @import './componentes/logo';
 @import './componentes/heading';
 @import './componentes/nav';
-@import './layout/hero';
-@import './layout/categorias';
+@import './componentes/categoria';
+@import './componentes/cardsMejores';
+
 @import './componentes/categoria';

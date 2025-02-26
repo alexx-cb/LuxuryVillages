@@ -34,6 +34,25 @@ h6, .h6 {
   font-family: "Nunito", "arial";
 }
 
+.mejores-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
 *,
 *::after,
 *::before {
@@ -52,16 +71,110 @@ html {
   grid-template-rows: repeat(5, min-content);
   grid-row-gap: 0.75rem;
   background-color: #f2f0f1;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .header {
-  grid-column: 1/-1;
-  grid-row: 1/2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7rem;
+  background-color: white;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   display: grid;
   grid-template-columns: minmax(10rem, 1fr) repeat(7, minmax(min-content, 16rem)) minmax(10rem, 1fr);
-  grid-template-rows: repeat(3, min-content);
+  grid-template-rows: min-content;
   grid-gap: 0.75rem;
+  align-items: center;
   z-index: 100;
+}
+
+.hero {
+  grid-column: 1/10;
+  grid-row: 1/2;
+  height: 90vh;
+  background: url("../../img/alonoso.jpg") no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  margin-top: 6.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-content {
+  color: white;
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.categorias {
+  grid-column: 1/10;
+  grid-row: 2/3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.categorias-titulo {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.categorias-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  justify-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+@media (max-width: 600px) {
+  .categorias-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mejores {
+  grid-column: 1/10;
+  grid-row: 3/4;
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem;
+  justify-self: center;
+}
+.mejores-titulo {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.mejores-container {
+  gap: 2rem;
+  width: 100%;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 768px) {
+  .mejores-container {
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+  }
+  .mejores-container .card {
+    width: 100%;
+    max-width: 450px;
+  }
 }
 
 .logo {
@@ -70,7 +183,7 @@ html {
   padding: 1rem;
 }
 .logo-img {
-  width: 10rem;
+  width: 8rem;
   height: 100%;
   object-fit: cover;
 }
@@ -116,49 +229,89 @@ html {
   color: red;
 }
 
-.hero {
-  grid-column: 1/-1;
-  grid-row: 2/3;
-  height: 75vh;
-  background: url("../../img/alonoso.jpg") no-repeat center center;
-  background-size: cover;
+.categoria {
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.hero-content {
-  color: white;
-  font-size: 2rem;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-.categorias {
+  transition: transform 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  gap: 1rem;
-  padding: 2rem;
-}
-.categorias-titulo {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-.categorias .categorias-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  justify-items: center;
   width: 100%;
+  max-width: 700px;
+  position: relative;
+  overflow: hidden;
 }
-@media (max-width: 600px) {
-  .categorias .categorias-grid {
-    grid-template-columns: 1fr;
+.categoria:hover {
+  transform: scale(1.05);
+}
+.categoria img {
+  width: 100%;
+  height: 650px;
+  object-fit: cover;
+}
+.categoria img {
+  transition: opacity 0.3s ease-in-out;
+}
+.categoria .categoria-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.categoria:hover img {
+  opacity: 0.5;
+}
+.categoria:hover .categoria-text {
+  opacity: 1;
+}
+
+.card {
+  flex: 1;
+  min-width: 0;
+  margin: 1rem;
+  max-width: 350px;
+  max-height: 620px;
+}
+@media only screen and (min-width: 768px) {
+  .card {
+    min-width: 250px;
+    flex: 0 1 calc(33.333% - 2rem);
   }
+}
+.card__img-container {
+  width: 100%;
+  height: 20rem;
+  overflow: hidden;
+}
+.card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.card__img:hover {
+  transform: scale(1.05);
+}
+.card__texto {
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.6rem;
+}
+.card__texto h4 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+.card__texto p {
+  color: rgb(93.5, 93.5, 93.5);
+  line-height: 1.5;
 }
 
 .categoria {

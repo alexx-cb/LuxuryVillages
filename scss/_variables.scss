@@ -28,3 +28,7 @@ $font-sizes:(
 @function size($size){
     @return map-get($font-sizes, $size)
 }
+
+$card-radius: 0.5rem;
+$card-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+$transition-time: 0.3s;
