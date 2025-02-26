@@ -67,13 +67,16 @@ html {
 
 .container {
   display: grid;
-  grid-template-columns: minmax(6rem, 1fr), repeat(8, minmax(min-content, 16rem)) minmax(6rem, 1fr);
-  grid-template-rows: repeat(5, min-content);
-  grid-row-gap: 0.75rem;
+  grid-template-columns: minmax(6rem, 1fr) repeat(8, minmax(min-content, 16rem)) minmax(6rem, 1fr);
+  grid-template-rows: repeat(4, min-content) auto;
   background-color: #f2f0f1;
   width: 100%;
   max-width: 100%;
   overflow: hidden;
+}
+.container > *:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .header {
@@ -93,7 +96,7 @@ html {
 }
 
 .hero {
-  grid-column: 1/10;
+  grid-column: 1/-1;
   grid-row: 1/2;
   height: 90vh;
   background: url("../../img/alonoso.jpg") no-repeat center center;
@@ -113,7 +116,7 @@ html {
 }
 
 .categorias {
-  grid-column: 1/10;
+  grid-column: 1/-1;
   grid-row: 2/3;
   display: flex;
   flex-direction: column;
@@ -147,7 +150,7 @@ html {
 }
 
 .mejores {
-  grid-column: 1/10;
+  grid-column: 1/-1;
   grid-row: 3/4;
   width: 80%;
   margin: 0 auto;
@@ -175,6 +178,28 @@ html {
     width: 100%;
     max-width: 450px;
   }
+}
+
+.footer {
+  width: 100vw;
+  grid-row: 4/5;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  background-color: #111;
+  color: #fff;
+  padding: 2rem;
+  text-align: left;
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  .footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+.footer .footer-section, .footer .footer-credits, .footer .footer-links, .footer .footer-contact {
+  padding: 1rem;
 }
 
 .logo {
@@ -314,48 +339,78 @@ html {
   line-height: 1.5;
 }
 
-.categoria {
-  background: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  text-align: center;
-  transition: transform 0.3s ease-in-out;
+.footer-contact h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+.footer-contact p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.footer-links-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: space-around;
+}
+.footer-links-item {
+  margin-right: 1rem;
+}
+.footer-links-link {
+  text-decoration: none;
+  color: inherit;
+}
+.footer-links-link:hover {
+  color: red;
+}
+.footer-links h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.footer-credits {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  max-width: 700px;
-  position: relative;
-  overflow: hidden;
 }
-.categoria:hover {
-  transform: scale(1.05);
+.footer-credits h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
 }
-.categoria img {
-  width: 100%;
-  height: 650px;
-  object-fit: cover;
+.footer-credits .icons {
+  display: flex;
+  gap: 1rem;
 }
-.categoria img {
-  transition: opacity 0.3s ease-in-out;
+.footer-credits .icons a {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.3s;
 }
-.categoria .categoria-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+.footer-credits .icons a:hover {
+  color: #ccc;
 }
-.categoria:hover img {
-  opacity: 0.5;
+
+.footer-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  font-size: 1.5rem;
 }
-.categoria:hover .categoria-text {
-  opacity: 1;
+.footer-icons a {
+  color: #fff;
+  transition: color 0.3s;
+}
+.footer-icons a:hover {
+  color: #ccc;
 }
 
 /*# sourceMappingURL=style.css.map */

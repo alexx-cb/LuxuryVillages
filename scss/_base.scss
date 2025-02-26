@@ -9,15 +9,18 @@ html{
     font-size: 100%;
 }
 
-.container{
+.container {
     display: grid;
-    grid-template-columns: minmax(6rem, 1fr), repeat(8, minmax(min-content, 16rem)) minmax(6rem, 1fr);
-    grid-template-rows: repeat(5, min-content);
-    grid-row-gap: 0.75rem;
+    grid-template-columns: minmax(6rem, 1fr) repeat(8, minmax(min-content, 16rem)) minmax(6rem, 1fr);
+    grid-template-rows: repeat(4, min-content) auto;
     background-color: color(tertiary);
-
+    
     width: 100%;
     max-width: 100%;
     overflow: hidden;
-}
 
+    & > *:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+}

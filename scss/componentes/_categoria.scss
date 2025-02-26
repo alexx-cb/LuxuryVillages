@@ -2,9 +2,11 @@
     @include card-styles;
     position: relative;
     overflow: hidden;
+    
     img {
         transition: opacity 0.3s ease-in-out;
     }
+    
     .categoria-text {
         position: absolute;
         top: 50%;
@@ -17,9 +19,11 @@
         opacity: 0;
         transition: opacity 0.3s ease-in-out;
     }
+    
     &:hover img {
         opacity: 0.5;
     }
+    
     &:hover .categoria-text {
         opacity: 1;
     }
